@@ -75,6 +75,18 @@ export const actions = {
 	},
 
 	/*
+	 * searchUsers( context )
+	 *
+	 * searchUsers finds all users that are selected and exempt and attempts
+	 * to send a delete to the exemptionUpdateURL with the user's ID. A toast message
+	 * will be posted back to the LMS
+	 */
+	searchUsers({commit, state}, searchBy) {
+		console.log(`Inside actions: ${searchBy}`)
+
+	},
+
+	/*
 	 * toggleSelection( context, user )
 	 *
 	 * toggleSelection will set the isSelect for the user

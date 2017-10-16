@@ -4,11 +4,16 @@
       {{ $t('btnExempt') }}
     </button>
     <button :aria-label="$t('ariaUnexempt')" class="d2l-button" @click="setUnexempt">{{ $t('btnUnexempt') }}</button>
-
+    <div class="vui-input-search-container">
+      <input :value="searchBy" @input="updateMessage" type="search" maxlength="60" placeholder="Search For…" spellcheck="false" autocomplete="off">
+      <input type="button" class="vui-input-search-button" @click="searchUsers(searchBy)"></input>
+    </div>
+    
     <p>
       <span class="exemption-count">{{ $t('lblExemptions') }}</span>
       {{ exemptionCount }}
     </p>
+
     <table :summary="$t('ariaTableSummary')">
       <thead>
         <tr>
@@ -56,7 +61,8 @@ export default {
   name: 'activity-exemptions',
   data() {
     return {
-      locale: 'en'
+      locale: 'en',
+      searchBy: ''
     }
   },
 
@@ -92,11 +98,15 @@ export default {
   methods: {
     ...mapActions([
       'loadMore',
+      'searchUsers',
       'selectAll',
       'setExempt',
       'setUnexempt',
       'toggleSelection'
-    ])
+    ]),
+    updateMessage(e) {
+      this.searchBy = e.target.value
+    }
   }
 }
 </script>
@@ -316,5 +326,18 @@ tbody > tr:last-child td:last-child {
     input[type="checkbox"] {
       -moz-appearance: checkbox;
     }
+  }
+</style>
+<style lang="scss" scoped>
+  @import 'node_modules/vui-input/input.css.scss';
+  .vui-input-search-container {
+    @include vui-input-search-container();
+    display: inline-block;
+    min-height: 42px;
+  }
+  .vui-input-search-button {
+    @include vui-input-search-button();
+    min-width: 24px;
+    min-height: 24px;
   }
 </style>
