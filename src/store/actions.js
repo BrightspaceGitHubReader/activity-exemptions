@@ -85,20 +85,18 @@ export const actions = {
 		if( !searchBy || !/\S/.test(searchBy) ) {
 			// If there is already a resulted list of students
 			if( state.queryTerm ) {
-				// Clear search term
-				commit(types.SET_QUERY_TERM, '')
-				// Load original list
-				commit(types.LOAD_USERS, [])
-				this.dispatch('loadUsers')
+				this.dispatch('clearResults')
 			} else {
 				return
 			}
-		} else {
+		} else {			
 			// Check if its the same term
 			if( searchBy === state.queryTerm) {
 				// Don't need to do anything if its the same term
 				return
 			}
+			commit(types.SET_SHOW_CLEAR_BUTTON, true)
+			
 			// New search term clear users
 			commit(types.LOAD_USERS, [])
 			// Set new term for queryTerm
@@ -108,6 +106,15 @@ export const actions = {
 			// Call loadUsers to load first page
 			this.dispatch('loadUsers')
 		}
+	},
+
+	clearResults({commit, state}) {
+		commit(types.SET_SHOW_CLEAR_BUTTON, '')
+		// Clear search term
+		commit(types.SET_QUERY_TERM, '')
+		// Load original list
+		commit(types.LOAD_USERS, [])
+		this.dispatch('loadUsers')
 	},
 
 	/*
@@ -141,7 +148,7 @@ export const actions = {
 	loadUsers({commit, state}) {
 		commit(types.IS_LOADING, true)
 
-		axios.get(state.classlistURL)
+		axios.get(`${state.classlistURL}?searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_USERS, resp.data.Items.map( r => {
 					r.isSelected = false
@@ -174,7 +181,7 @@ export const actions = {
 	 */
 	loadMore({commit, state}) {
 		commit(types.IS_LOADING, true)
-		axios.get(`${state.classlistURL}?bookmark=${state.bookmark}`)
+		axios.get(`${state.classlistURL}?bookmark=${state.bookmark}&searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_MORE_USERS, resp.data.Items.map( r => {
 					r.isSelected = false

@@ -8,7 +8,8 @@
       <input :value="searchBy" @input="updateMessage" type="search" maxlength="60" placeholder="Search For…" spellcheck="false" autocomplete="off">
       <input type="button" class="vui-input-search-button" @click="searchUsers(searchBy)"></input>
     </div>
-    
+    <button v-if="showClearButton" @click="clearResults">Clear Search</button>
+
     <p>
       <span class="exemption-count">{{ $t('lblExemptions') }}</span>
       {{ exemptionCount }}
@@ -77,7 +78,8 @@ export default {
       'canSeeOrgIdColumn',
       'canSeeFirstName',
       'canSeeLastName',
-      'localId'
+      'localId',
+      'showClearButton'
     ]),
 
     ariaSelectText() {
@@ -106,6 +108,10 @@ export default {
     ]),
     updateMessage(e) {
       this.searchBy = e.target.value
+    },
+    clearResults() {
+      this.searchBy = ''
+      this.$store.dispatch('clearResults')
     }
   }
 }
