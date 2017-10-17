@@ -77,13 +77,37 @@ export const actions = {
 	/*
 	 * searchUsers( context )
 	 *
-	 * searchUsers finds all users that are selected and exempt and attempts
-	 * to send a delete to the exemptionUpdateURL with the user's ID. A toast message
-	 * will be posted back to the LMS
+	 * searchUsers calls prepares the search against the classlist api
+	 * with a query parameter for loadUsers.
 	 */
 	searchUsers({commit, state}, searchBy) {
-		console.log(`Inside actions: ${searchBy}`)
-
+		// Check null searchBy
+		if( !searchBy || !/\S/.test(searchBy) ) {
+			// If there is already a resulted list of students
+			if( state.queryTerm ) {
+				// Clear search term
+				commit(types.SET_QUERY_TERM, '')
+				// Load original list
+				commit(types.LOAD_USERS, [])
+				this.dispatch('loadUsers')
+			} else {
+				return
+			}
+		} else {
+			// Check if its the same term
+			if( searchBy === state.queryTerm) {
+				// Don't need to do anything if its the same term
+				return
+			}
+			// New search term clear users
+			commit(types.LOAD_USERS, [])
+			// Set new term for queryTerm
+			commit(types.SET_QUERY_TERM, searchBy)
+			// Reset paging info
+			commit(types.LOAD_PAGINGINFO, {})
+			// Call loadUsers to load first page
+			this.dispatch('loadUsers')
+		}
 	},
 
 	/*
