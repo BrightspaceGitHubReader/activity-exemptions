@@ -5,15 +5,17 @@
     </button>
     <button :aria-label="$t('ariaUnexempt')" class="d2l-button" @click="setUnexempt">{{ $t('btnUnexempt') }}</button>
     <div class="vui-input-search-container">
-      <input :value="searchBy" @input="updateMessage" type="search" maxlength="60" placeholder="Search For…" spellcheck="false" autocomplete="off">
-      <input type="button" class="vui-input-search-button" @click="searchUsers(searchBy)"></input>
+      <input :value="searchBy" @input="updateMessage" type="search" maxlength="60" :placeholder="$t('lblSearchPlaceholder')" spellcheck="false" autocomplete="off">
+      <input type="button" :aria-label="$t('ariaSearchButton')" class="vui-input-search-button" @click="searchUsers(searchBy)"></input>
     </div>
-    <button v-if="showClearButton" @click="clearResults">Clear Search</button>
 
-    <p>
+    <div class="exemptions-count-container">
       <span class="exemption-count">{{ $t('lblExemptions') }}</span>
       {{ exemptionCount }}
-    </p>
+      <div class="clear-results-container">
+        <a v-if="showClearButton" class="clear-results-link" @click="clearResults">{{ $t('lblClearSearch') }}</a>
+      </div>
+    </div>
 
     <table :summary="$t('ariaTableSummary')">
       <thead>
@@ -242,7 +244,8 @@ tbody > tr:last-child td:last-child {
 }
 
 .d2l-button {
-  margin: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
   background-color: #f2f3f5;
   border-color: #d3d9e3;
   color: #565a5c;
@@ -333,13 +336,25 @@ tbody > tr:last-child td:last-child {
       -moz-appearance: checkbox;
     }
   }
+  .clear-results-container {
+    float: right;
+  }
+  .clear-results-link {
+    color: #006fbf;
+    text-decoration: underline;
+  }
+  .exemptions-count-container {
+    margin-top: 20px;
+  }
 </style>
 <style lang="scss" scoped>
   @import 'node_modules/vui-input/input.css.scss';
   .vui-input-search-container {
     @include vui-input-search-container();
-    display: inline-block;
+    display: block;
+    float: right;
     min-height: 42px;
+    margin-top: 13px;
   }
   .vui-input-search-button {
     @include vui-input-search-button();

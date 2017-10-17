@@ -153,7 +153,7 @@ export const actions = {
 	loadUsers({commit, state}) {
 		commit(types.IS_LOADING, true)
 
-		axios.get(`${state.classlistURL}?showShowninGrades=true&searchTerm=${state.queryTerm}`)
+		axios.get(`${state.classlistURL}?onlyShowShownInGrades=true&searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_USERS, resp.data.Items.map( r => {
 					r.isSelected = false
@@ -186,7 +186,7 @@ export const actions = {
 	 */
 	loadMore({commit, state}) {
 		commit(types.IS_LOADING, true)
-		axios.get(`${state.classlistURL}?showShowninGrades=true&bookmark=${state.bookmark}&searchTerm=${state.queryTerm}`)
+		axios.get(`${state.classlistURL}?onlyShowShownInGrades=true&bookmark=${state.bookmark}&searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_MORE_USERS, resp.data.Items.map( r => {
 					r.isSelected = false
