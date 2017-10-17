@@ -108,6 +108,11 @@ export const actions = {
 		}
 	},
 
+	/*
+	 * clearResults( context )
+	 *
+	 * clearResults clears the search box and results reloads the original load
+	 */
 	clearResults({commit, state}) {
 		commit(types.SET_SHOW_CLEAR_BUTTON, '')
 		// Clear search term
@@ -148,7 +153,7 @@ export const actions = {
 	loadUsers({commit, state}) {
 		commit(types.IS_LOADING, true)
 
-		axios.get(`${state.classlistURL}?searchTerm=${state.queryTerm}`)
+		axios.get(`${state.classlistURL}?showShowninGrades=true&searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_USERS, resp.data.Items.map( r => {
 					r.isSelected = false
@@ -181,7 +186,7 @@ export const actions = {
 	 */
 	loadMore({commit, state}) {
 		commit(types.IS_LOADING, true)
-		axios.get(`${state.classlistURL}?bookmark=${state.bookmark}&searchTerm=${state.queryTerm}`)
+		axios.get(`${state.classlistURL}?showShowninGrades=true&bookmark=${state.bookmark}&searchTerm=${state.queryTerm}`)
 			.then( resp => {
 				commit( types.LOAD_MORE_USERS, resp.data.Items.map( r => {
 					r.isSelected = false
