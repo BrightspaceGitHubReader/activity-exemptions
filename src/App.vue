@@ -5,7 +5,7 @@
     </button>
     <button :aria-label="$t('ariaUnexempt')" class="d2l-button" @click="setUnexempt">{{ $t('btnUnexempt') }}</button>
     <div class="vui-input-search-container">
-      <input :value="searchBy" @input="updateMessage" @keyup.enter="searchUsers(searchBy)" type="search" maxlength="60" :placeholder="$t('lblSearchPlaceholder')" spellcheck="false" autocomplete="off">
+      <input :value="searchBy" @input="updateMessage" @keyup.enter.prevent.stop="searchUsers(searchBy)" type="search" maxlength="60" :placeholder="$t('lblSearchPlaceholder')" spellcheck="false" autocomplete="off">
       <button :aria-label="$t('ariaSearchButton')" class="vui-input-search-button" @click="searchUsers(searchBy)"></button>
     </div>
 
