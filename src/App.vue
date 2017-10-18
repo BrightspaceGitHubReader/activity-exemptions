@@ -5,15 +5,15 @@
     </button>
     <button :aria-label="$t('ariaUnexempt')" class="d2l-button" @click="setUnexempt">{{ $t('btnUnexempt') }}</button>
     <div class="vui-input-search-container">
-      <input :value="searchBy" @input="updateMessage" type="search" maxlength="60" :placeholder="$t('lblSearchPlaceholder')" spellcheck="false" autocomplete="off">
-      <input type="button" :aria-label="$t('ariaSearchButton')" class="vui-input-search-button" @click="searchUsers(searchBy)"></input>
+      <input :value="searchBy" @input="updateMessage" @keyup.enter="searchUsers(searchBy)" type="search" maxlength="60" :placeholder="$t('lblSearchPlaceholder')" spellcheck="false" autocomplete="off">
+      <button :aria-label="$t('ariaSearchButton')" class="vui-input-search-button" @click="searchUsers(searchBy)"></button>
     </div>
 
     <div class="exemptions-count-container">
       <span class="exemption-count">{{ $t('lblExemptions') }}</span>
       {{ exemptionCount }}
       <div class="clear-results-container">
-        <a v-if="showClearButton" class="clear-results-link" @click="clearResults">{{ $t('btnClearSearch') }}</a>
+        <button v-if="showClearButton" class="clear-results-button" @click="clearResults">{{ $t('btnClearSearch') }}</button>
       </div>
     </div>
 
@@ -341,7 +341,13 @@ tbody > tr:last-child td:last-child {
     float: right;
   }
 
-  .clear-results-link {
+  .clear-results-button {
+    background:none!important;
+    color:inherit;
+    border:none; 
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
     color: #006fbf;
     text-decoration: underline;
   }
