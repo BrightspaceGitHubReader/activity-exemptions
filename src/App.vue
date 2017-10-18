@@ -13,7 +13,7 @@
       <span class="exemption-count">{{ $t('lblExemptions') }}</span>
       {{ exemptionCount }}
       <div class="clear-results-container">
-        <a v-if="showClearButton" class="clear-results-link" @click="clearResults">{{ $t('lblClearSearch') }}</a>
+        <a v-if="showClearButton" class="clear-results-link" @click="clearResults">{{ $t('btnClearSearch') }}</a>
       </div>
     </div>
 
@@ -336,29 +336,46 @@ tbody > tr:last-child td:last-child {
       -moz-appearance: checkbox;
     }
   }
+
   .clear-results-container {
     float: right;
   }
+
   .clear-results-link {
     color: #006fbf;
     text-decoration: underline;
   }
+
   .exemptions-count-container {
     margin-top: 20px;
+  }
+
+  [dir="rtl"] .clear-results-container {
+    float: left;
+  }
+
+  .vui-input-search-container {
+    display: block;
+    float: right;
+    min-height: 42px;
+    margin-top: 13px;
+  }
+
+  .vui-input-search-button {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  [dir="rtl"] .vui-input-search-container {
+    float: left;
   }
 </style>
 <style lang="scss" scoped>
   @import 'node_modules/vui-input/input.css.scss';
   .vui-input-search-container {
     @include vui-input-search-container();
-    display: block;
-    float: right;
-    min-height: 42px;
-    margin-top: 13px;
   }
   .vui-input-search-button {
     @include vui-input-search-button();
-    min-width: 24px;
-    min-height: 24px;
   }
 </style>

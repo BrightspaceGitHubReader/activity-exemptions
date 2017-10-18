@@ -18,7 +18,7 @@
 	"lblExemptStatus": "Exempt Status",
 	"lblOrgDefinedId": "Org Defined Id",
 	"lblSearchPlaceholder": "Search For…",
-	"lblClearSearch": "Clear Search",
+	"btnClearSearch": "Clear Search",
 	"btnExempt": "Exempt",
 	"btnUnexempt": "Unexempt",
 	"btnLoadMore": "Load More...",
