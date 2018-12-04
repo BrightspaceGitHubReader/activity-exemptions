@@ -20,7 +20,7 @@
    "lblFirstName" : "名",
    "lblLastName" : "姓",
    "lblNoPermission" : "クラスリスト権限を持っていないか、またはどのユーザーも「成績で成績分類可能」の役割プロパティを持っていない可能性があります。",
-   "lblNoResultsFound" : "<strong>{queryTerm}<\/strong>に対する結果が見つかりません。",
+   "lblNoResultsFound" : "<strong>{queryTerm}</strong>に対する結果が見つかりません。",
    "lblNoUsers" : "ユーザーが見つかりません。",
    "lblNotExempt" : "免除対象外",
    "lblOrgDefinedId" : "組織定義 ID",
