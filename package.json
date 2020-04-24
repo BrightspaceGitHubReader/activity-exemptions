@@ -29,7 +29,7 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
-    "frau-publisher": "^2.6.2",
+    "frau-publisher": "^2.7.11",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
@@ -47,10 +47,6 @@
       "files": "./dist/**",
       "moduleType": "app",
       "targetDirectory": "activity-exemptions",
-      "creds": {
-        "key": "AKIAJEH2VIEQUZY7KW4Q",
-        "secretVar": "S3_SECRET"
-      },
       "devTagVar": "TRAVIS_COMMIT",
       "versionVar": "TRAVIS_TAG"
     }
