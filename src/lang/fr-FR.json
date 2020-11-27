@@ -18,7 +18,7 @@
    "lblExemptionCount" : "Dispenses : {exemptionCount}",
    "lblExemptions" : "Dispenses",
    "lblFirstName" : "Prénom",
-   "lblLastName" : "Nom de famille",
+   "lblLastName" : "Nom",
    "lblNoPermission" : "Vous ne disposez pas de l’autorisation nécessaire pour afficher la liste des participants, ou aucun utilisateur ne possède la propriété de rôle « Can be graded in grades » (Peut recevoir des notes d’évaluation).",
    "lblNoResultsFound" : "Aucun résultat trouvé pour <strong>{queryTerm}</strong>.",
    "lblNoUsers" : "Aucun utilisateur trouvé.",
