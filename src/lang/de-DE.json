@@ -22,11 +22,11 @@
    "lblNoPermission" : "Sie haben möglicherweise keine Berechtigung, auf die Teilnehmerliste zuzugreifen, oder keine Benutzer verfügen über die Rolleneigenschaft „Kann mit Noten benotet werden“.",
    "lblNoResultsFound" : "Keine Ergebnisse für <strong>{queryTerm}</strong>.",
    "lblNoUsers" : "Keine Benutzer gefunden.",
-   "lblNotExempt" : "Nicht ausgenommen",
+   "lblNotExempt" : "Niicht ausgenommen",
    "lblOrgDefinedId" : "Organisationsspezifische ID",
    "lblSearchPlaceholder" : "Suchen nach …",
    "lblUser" : "Benutzer",
    "toastCouldNotLoad" : "Es konnten keine Aktivitäts-Ausnahmedaten geladen werden.",
-   "toastExempt" : "Gespeichert. Nichts gespeichert | Gespeichert. 1 Benutzer ausgenommen. | Gespeichert. {count} Benutzer ausgenommen.",
-   "toastUnexempt" : "Gespeichert. Nichts gespeichert | Gespeichert. 1 Benutzer nicht ausgenommen. | Gespeichert. {count} Benutzer nicht ausgenommen."
+   "toastExempt" : "Erfolgreich gespeichert. Nichts gespeichert | Erfolgreich gespeichert. 1 Benutzer ausgenommen. | Erfolgreich gespeichert. {count} Benutzer ausgenommen.",
+   "toastUnexempt" : "Erfolgreich gespeichert. Nichts gespeichert | Erfolgreich gespeichert. 1 Benutzer nicht ausgenommen. | Erfolgreich gespeichert. {count} Benutzer nicht ausgenommen."
 }

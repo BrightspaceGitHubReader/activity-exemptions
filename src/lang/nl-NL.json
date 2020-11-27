@@ -27,6 +27,6 @@
    "lblSearchPlaceholder" : "Zoeken naar...",
    "lblUser" : "Gebruiker",
    "toastCouldNotLoad" : "Vrijstellingsgegevens van activiteit kunnen niet worden geladen",
-   "toastExempt" : "Opgeslagen. Niets opgeslagen | Opgeslagen. Vrijstelling voor 1 gebruiker. | Opgeslagen. Vrijstelling voor {count} gebruikers.",
+   "toastExempt" : "Opgeslagen. Niets opgeslagen | Opgeslagen. 1 gebruiker vrijgesteld. | Opgeslagen. {count} gebruikers vrijgesteld.",
    "toastUnexempt" : "Opgeslagen. Niets opgeslagen | Opgeslagen. Vrijstelling voor 1 gebruiker opgeheven. | Opgeslagen. Vrijstelling voor {count} gebruikers opgeheven."
 }

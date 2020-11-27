@@ -7,7 +7,7 @@
    "ariaSelectUnselectAll" : "Marcar/Desmarcar tudo",
    "ariaTableSummary" : "A lista de usuários cujo status de isenção pode ser modificado.",
    "ariaUnexempt" : "Usuários não isentos selecionados",
-   "btnClearSearch" : "Limpar Pesquisa",
+   "btnClearSearch" : "Limpar pesquisa",
    "btnExempt" : "Isento",
    "btnLoadMore" : "Carregar Mais...",
    "btnUnexempt" : "Não isento",
@@ -23,10 +23,10 @@
    "lblNoResultsFound" : "Nenhum resultado encontrado para <strong>{queryTerm}</strong>.",
    "lblNoUsers" : "Nenhum usuário encontrado.",
    "lblNotExempt" : "Não Isento",
-   "lblOrgDefinedId" : "ID Definido da Organização",
+   "lblOrgDefinedId" : "ID definido pela organização",
    "lblSearchPlaceholder" : "Pesquisar…",
    "lblUser" : "Usuário",
    "toastCouldNotLoad" : "Não foi possível carregar dados de isenção da atividade",
-   "toastExempt" : "Salvo com sucesso. Nada foi salvo | Salvo com sucesso. 1 usuário isento. | Salvo com sucesso. {count} usuários isentos.",
-   "toastUnexempt" : "Salvo com sucesso. Nada foi salvo | Salvo com sucesso. 1 usuário não isento. | Salvo com sucesso. {count} usuários não isentos."
+   "toastExempt" : "Salvo com êxito. Não foi salvo | Salvo com êxito. 1 usuário isento. | Salvo com êxito. {count} usuários isentos.",
+   "toastUnexempt" : "Salvo com êxito. Não foi salvo | Salvo com êxito. 1 usuário não isento. | Salvo com êxito. {count} usuários não isentos."
 }
