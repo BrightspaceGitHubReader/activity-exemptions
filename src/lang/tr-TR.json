@@ -27,6 +27,6 @@
    "lblSearchPlaceholder" : "Ara:",
    "lblUser" : "Kullanıcı",
    "toastCouldNotLoad" : "Etkinlik muafiyeti verileri yüklenemedi",
-   "toastExempt" : "Başarıyla kaydedildi. Hiçbir şey kaydedilmedi | Başarıyla kaydedildi. 1 kullanıcı muaf tutuldu. | Başarıyla kaydedildi. {Count} kullanıcı muaf tutuldu.",
-   "toastUnexempt" : "Başarıyla kaydedildi. Hiçbir şey kaydedilmedi | Başarıyla kaydedildi. 1 kullanıcının muafiyeti kaldırıldı. | Başarıyla kaydedildi. {Count} kullanıcının muafiyeti kaldırıldı."
+   "toastExempt" : "Başarıyla kaydedildi. Hiçbir şey kaydedilmedi | Başarıyla kaydedildi. 1 kullanıcı muaf. | Başarıyla kaydedildi. {count} kullanıcı muaf.",
+   "toastUnexempt" : "Başarıyla kaydedildi. Hiçbir şey kaydedilmedi | Başarıyla kaydedildi. 1 kullanıcının muafiyeti kaldırıldı. | Başarıyla kaydedildi. {count} kullanıcının muafiyeti kaldırıldı."
 }
